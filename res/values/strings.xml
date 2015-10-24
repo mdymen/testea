@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Testea</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="nome_usuario">Usuario</string>
+    <string name="senha">Senha</string>
+    <string name="login">Login</string>
+    <string name="signin">SignIn</string>
+    <string name="title_activity_sign_in">SignIn</string>
+	<string name="meus_dados">Meus Dados</string>
+ 	<string name="meus_lutadores">Meus Lutadores</string> 
+ 	<string name="lutadores">Lutadores</string>   
+	<string name="treinos">Treinos</string> 
+	<string name="lutas">Lutas</string>
+	<string name="usuario">Usuario</string>
+	<string name="confsenha">Confirmação de Senha</string>
+	<string name="email">Email</string>
+	<string name="cep">CEP</string>
+	<string name="cadastrese">Cadastra-Se</string>
+</resources>

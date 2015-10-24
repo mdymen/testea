@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.examplet.teste.MainActivity" >
+
+    <EditText android:id="@+id/usuario"
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"
+        android:gravity="center"
+        android:hint="@string/nome_usuario" />
+    
+    <EditText android:id="@+id/senha"
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"
+        android:gravity="center"
+        android:hint="@string/senha" />
+    
+    <Button android:id="@+id/login"
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"
+        android:gravity="center"
+        android:onClick="btnLoginClick"
+        android:hint="@string/login" />
+     
+    <Button android:id="@+id/signin"
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"
+        android:gravity="center"
+        android:onClick="btnAbrirNuevo"
+        android:hint="@string/signin" />
+
+    
+</LinearLayout>
