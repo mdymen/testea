@@ -28,6 +28,14 @@
             android:name=".SignIn"
             android:label="@string/title_activity_sign_in" >
         </activity>
+        <activity
+            android:name=".CriarAcademia"
+            android:label="@string/title_activity_criar_academia" >
+        </activity>
+        <activity
+            android:name=".CriarLutador"
+            android:label="@string/title_activity_criar_lutador" >
+        </activity>
     </application>
 
 </manifest>

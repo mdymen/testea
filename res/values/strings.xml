@@ -9,14 +9,17 @@
     <string name="login">Login</string>
     <string name="signin">SignIn</string>
     <string name="title_activity_sign_in">SignIn</string>
-	<string name="meus_dados">Meus Dados</string>
- 	<string name="meus_lutadores">Meus Lutadores</string> 
- 	<string name="lutadores">Lutadores</string>   
-	<string name="treinos">Treinos</string> 
-	<string name="lutas">Lutas</string>
-	<string name="usuario">Usuario</string>
-	<string name="confsenha">Confirmação de Senha</string>
-	<string name="email">Email</string>
-	<string name="cep">CEP</string>
-	<string name="cadastrese">Cadastra-Se</string>
+    <string name="meus_dados">Meus Dados</string>
+    <string name="meus_lutadores">Meus Lutadores</string>
+    <string name="lutadores">Lutadores</string>
+    <string name="treinos">Treinos</string>
+    <string name="lutas">Lutas</string>
+    <string name="usuario">Usuario</string>
+    <string name="confsenha">Confirmação de Senha</string>
+    <string name="email">Email</string>
+    <string name="cep">CEP</string>
+    <string name="cadastrese">Cadastra-Se</string>
+    <string name="title_activity_criar_academia">CriarAcademia</string>
+    <string name="title_activity_criar_lutador">CriarLutador</string>
+
 </resources>
