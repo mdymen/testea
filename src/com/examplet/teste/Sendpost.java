@@ -16,12 +16,13 @@ public class Sendpost extends AsyncTask<String, Void, Void>{
 	@Override
 	protected Void doInBackground(String... arg0) {
         try {
-        	String usuario = arg0[0];
-        	String senha = arg0[1];
-        	String email = arg0[3];
-        	String cep = arg0[2];
+        	String action = arg0[0];
+        	String usuario = arg0[1];
+        	String senha = arg0[2];
+        	String email = arg0[4];
+        	String cep = arg0[5];
         	
-	        URL url = new URL("http://www.worldfight.com.br/public/agt/signin?cep="+cep+"&usuario="+usuario+"&email="+email+"&senha="+senha);
+	        URL url = new URL("http://www.worldfight.com.br/public/agt/"+action+"?cep="+cep+"&usuario="+usuario+"&email="+email+"&senha="+senha);
 	        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 	        conn.setReadTimeout(10000);
 	        conn.setConnectTimeout(15000);
@@ -31,19 +32,6 @@ public class Sendpost extends AsyncTask<String, Void, Void>{
 	
 	        InputStream in = new BufferedInputStream(conn.getInputStream());
 	        
-//	        ContentValues values=new ContentValues();
-//	        values.put("username","mdymen");
-//	        values.put("password","minhaSenha");
-//	
-//	        OutputStream os = conn.getOutputStream();
-//	        BufferedWriter writer = new BufferedWriter(
-//	                new OutputStreamWriter(os, "UTF-8"));
-//	        writer.write("HOLAA");
-//	        writer.flush();
-//	        writer.close();
-//	        os.close();
-//	
-//	        conn.connect();
         }
         catch (Exception e) {
         	System.out.println(e.getMessage());

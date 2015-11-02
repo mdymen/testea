@@ -10,52 +10,63 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import com.examplet.rest.Rest;
+
 import android.support.v7.app.AppCompatActivity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.os.UserManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.examplet.rest.DataReturn;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DataReturn {
 
 	Button btnClick = null;
 	EditText txtUsuario = null;
 	EditText txtSenha = null;
-	public static final String AGT = "AGT";
+	public String retorno;
+	Context ctx;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences settings = getSharedPreferences(AGT,0);
+        this.ctx = this.getApplicationContext();
+        com.examplet.util.UserManager.getInstance(this.ctx);
         
         btnClick = (Button) findViewById(R.id.login);
-        settings = getSharedPreferences(AGT,0);
-        String restoredText = settings.getString("usuario", null);
-        
-        if (restoredText != null) {
-//        	Editor editor = settings.edit();
-//        	editor.putString("name", null);
-//        	editor.commit();
-        	this.btnAbrirNuevo(null);
-        } else {
-        	setContentView(R.layout.activity_main);
-        }
+//        if (restoredText != null) {
+//        	this.btnAbrirNuevo(null);
+//        } else {
+//        	setContentView(R.layout.activity_main);
+//        }
+        setContentView(R.layout.activity_main);
     }
     
     public void btnLoginClick(View view) {
-    	  txtUsuario = (EditText) findViewById(R.id.usuario);
-          txtSenha = (EditText) findViewById(R.id.senha);
-        
-    	String[] args = new String[] {txtUsuario.getText().toString(),txtSenha.getText().toString() };
-    	new Sendpost().execute(args);
+    	
+  	  txtUsuario = (EditText) findViewById(R.id.usuario);
+      txtSenha = (EditText) findViewById(R.id.senha);
+      
+    	Rest r = new Rest();
+    	r.adicionar(txtUsuario.getText().toString(), "usuario");
+    	r.adicionar(txtSenha.getText().toString(), "senha");
+    	r.setAction("login");
+    	r.setDataReturn(this);
+    	r.execute("");
+//        
+//    	String[] args = new String[] {"login", txtUsuario.getText().toString(),txtSenha.getText().toString() };
+//    	new Sendpost().execute(args);
     }
     
     public void btnAbrirNuevo(View view) {
@@ -68,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+    
+    public void menuAcademia(MenuItem item) {
+    	Intent i = new Intent(this, CriarAcademia.class);
+    	startActivity(i);
     }
 
     @Override
@@ -83,4 +99,22 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+	@Override
+	public void dataActiviyReturn() {
+		if (!this.retorno.equals("0")) {
+			com.examplet.util.UserManager.getInstance().setUsuario(txtUsuario.getText().toString());
+			int id = Integer.parseInt(this.retorno);
+			com.examplet.util.UserManager.getInstance().setId(id);
+	    	Intent intent = new Intent(this, CriarAcademia.class);
+	    	startActivity(intent);
+		} else {
+			Toast toast = Toast.makeText(this.ctx, "Nome de usuario ou senha incorretos!", Toast.LENGTH_LONG);
+			toast.show();
+		}
+	}
+	
+	public void setValor(Object valor) {
+		this.retorno = valor+"";
+	}
 }

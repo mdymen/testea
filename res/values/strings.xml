@@ -19,7 +19,13 @@
     <string name="email">Email</string>
     <string name="cep">CEP</string>
     <string name="cadastrese">Cadastra-Se</string>
+	<string name="academia">Academia</string>
     <string name="title_activity_criar_academia">CriarAcademia</string>
     <string name="title_activity_criar_lutador">CriarLutador</string>
-
+	<string name="Criar">Criar</string>
+	<string name="Nome">Nome</string>
+	<string name="Descricao">Descricao</string>
+	<string name="NomeDaAcademia">Nome</string>
+	<string name="NomeCompletoLutador">Nome completo do Lutador</string>
+	
 </resources>
