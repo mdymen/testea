@@ -36,6 +36,18 @@
             android:name=".CriarLutador"
             android:label="@string/title_activity_criar_lutador" >
         </activity>
+        <activity
+            android:name=".Inicio"
+            android:label="@string/title_activity_inicio" >
+        </activity>
+        <activity
+            android:name=".Luta"
+            android:label="@string/title_activity_luta" >
+        </activity>
+        <activity
+            android:name=".Lutador"
+            android:label="@string/title_activity_lutador" >
+        </activity>
     </application>
 
 </manifest>
