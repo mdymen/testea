@@ -54,49 +54,49 @@ public class MainActivity extends AppCompatActivity implements DataReturn {
         
         
         try {
-            setContentView(R.layout.activity_inicio);
+            setContentView(R.layout.activity_lutador);
         // Get ListView object from xml
-        listView = (ListView) findViewById(R.id.list);
-        
-        // Defined Array values to show in ListView
-        String[] values = new String[] { "Android List View", 
-                                         "Adapter implementation",
-                                         "Simple List View In Android",
-                                         "Create List View Android", 
-                                         "Android Example", 
-                                         "List View Source Code", 
-                                         "List View Array Adapter", 
-                                         "Android Example List View" 
-                                        };
-        ctx = this;
-        // Define a new Adapter
-        // First parameter - Context
-        // Second parameter - Layout for the row
-        // Third parameter - ID of the TextView to which the data is written
-        // Forth - the Array of data
-
-        listView.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
-//				Intent i = new Intent(ctx, CriarLutador.class);
-//				startActivity(i);
-				Toast toast = Toast.makeText(ctx, arg2, Toast.LENGTH_LONG);
-				toast.show();
-//				Toast toast = Toast.makeText(this.ctx, "Error na criacao!", Toast.LENGTH_LONG);
+//        listView = (ListView) findViewById(R.id.list);
+//        
+//        // Defined Array values to show in ListView
+//        String[] values = new String[] { "Android List View", 
+//                                         "Adapter implementation",
+//                                         "Simple List View In Android",
+//                                         "Create List View Android", 
+//                                         "Android Example", 
+//                                         "List View Source Code", 
+//                                         "List View Array Adapter", 
+//                                         "Android Example List View" 
+//                                        };
+//        ctx = this;
+//        // Define a new Adapter
+//        // First parameter - Context
+//        // Second parameter - Layout for the row
+//        // Third parameter - ID of the TextView to which the data is written
+//        // Forth - the Array of data
+//
+//        listView.setOnItemClickListener(new OnItemClickListener() {
+//
+//			@Override
+//			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+//					long arg3) {
+////				Intent i = new Intent(ctx, CriarLutador.class);
+////				startActivity(i);
+//				Toast toast = Toast.makeText(ctx, arg2, Toast.LENGTH_LONG);
 //				toast.show();
-				
-			};
-        	
-        });
-        
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-          android.R.layout.simple_list_item_1, android.R.id.text1, values);
-
-
-        // Assign adapter to ListView
-        listView.setAdapter(adapter); 
+////				Toast toast = Toast.makeText(this.ctx, "Error na criacao!", Toast.LENGTH_LONG);
+////				toast.show();
+//				
+//			};
+//        	
+//        });
+//        
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+//          android.R.layout.simple_list_item_1, android.R.id.text1, values);
+//
+//
+//        // Assign adapter to ListView
+//        listView.setAdapter(adapter); 
         
         }
         catch (Exception e) {

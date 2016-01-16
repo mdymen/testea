@@ -48,6 +48,14 @@
             android:name=".Lutador"
             android:label="@string/title_activity_lutador" >
         </activity>
+        <activity
+            android:name=".Resultado"
+            android:label="@string/title_activity_resultado" >
+        </activity>
+        <activity
+            android:name=".Treino"
+            android:label="@string/title_activity_treino" >
+        </activity>
     </application>
 
 </manifest>
