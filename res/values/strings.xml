@@ -30,6 +30,18 @@
     <string name="title_activity_inicio">Inicio</string>
     <string name="title_activity_luta">Luta</string>
     <string name="title_activity_lutador">Lutador</string>
+    <string name="reminder">reminder</string>
+    <string name="boxe">boxe</string>
+    <string name="joelho">joelho</string>
+    <string name="chute">chute</string>
+    <string name="cotovelo">cotovelo</string>
+    <string name="clinch">clinch</string>
+    <string name="resistencia">resistencia</string>
+    <string name="explocao">explocao</string>
+    <string name="velocidade">velocidade</string>
+    <string name="estadofisico">estado fisico</string>
+    <string name="zero">0</string>
+    <string name="nome">Nome</string>
     <string name="title_activity_resultado">Resultado</string>
     <string name="title_activity_treino">Treino</string>
 

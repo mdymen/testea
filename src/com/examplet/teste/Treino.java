@@ -1,6 +1,7 @@
 package com.examplet.teste;
 
 import com.examplet.rest.DataReturn;
+import com.examplet.rest.Rest;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,13 @@ public class Treino extends AppCompatActivity implements DataReturn {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		Rest r = new Rest();
+		r.adicionar(1+"", "id");
+		r.setAction("getlutador");
+		r.setDataReturn(this);
+		r.execute("");
+		
 		setContentView(R.layout.activity_treino);
 	}
 

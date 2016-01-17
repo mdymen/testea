@@ -10,6 +10,11 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONStringer;
+
+import com.examplet.entidades.Lutador;
 import com.examplet.rest.Rest;
 
 import android.support.v7.app.AppCompatActivity;
@@ -50,7 +55,11 @@ public class MainActivity extends AppCompatActivity implements DataReturn {
         this.ctx = this.getApplicationContext();
         com.examplet.util.UserManager.getInstance(this.ctx);
         
-
+		Rest r = new Rest();
+		r.adicionar(1+"", "id");
+		r.setAction("getlutador");
+		r.setDataReturn(this);
+		r.execute("");
         
         
         try {
@@ -157,20 +166,29 @@ public class MainActivity extends AppCompatActivity implements DataReturn {
         }
         return super.onOptionsItemSelected(item);
     }
+    
+    @Override
+    public void dataActiviyReturn() {
+    	Lutador lutador = new Lutador(this.retorno);
+    	
+		Intent intent = new Intent(this, LutadorActivity.class);
+		intent.putExtra("Lutador", lutador);
+		startActivity(intent);
+    }
 
-	@Override
-	public void dataActiviyReturn() {
-		if (!this.retorno.equals("0")) {
-			com.examplet.util.UserManager.getInstance().setUsuario(txtUsuario.getText().toString());
-			int id = Integer.parseInt(this.retorno);
-			com.examplet.util.UserManager.getInstance().setId(id);
-	    	Intent intent = new Intent(this, CriarAcademia.class);
-	    	startActivity(intent);
-		} else {
-			Toast toast = Toast.makeText(this.ctx, "Nome de usuario ou senha incorretos!", Toast.LENGTH_LONG);
-			toast.show();
-		}
-	}
+//	@Override
+//	public void dataActiviyReturn() {
+//		if (!this.retorno.equals("0")) {
+//			com.examplet.util.UserManager.getInstance().setUsuario(txtUsuario.getText().toString());
+//			int id = Integer.parseInt(this.retorno);
+//			com.examplet.util.UserManager.getInstance().setId(id);
+//	    	Intent intent = new Intent(this, CriarAcademia.class);
+//	    	startActivity(intent);
+//		} else {
+//			Toast toast = Toast.makeText(this.ctx, "Nome de usuario ou senha incorretos!", Toast.LENGTH_LONG);
+//			toast.show();
+//		}
+//	}
 	
 	public void setValor(Object valor) {
 		this.retorno = valor+"";
