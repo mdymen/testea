@@ -3,13 +3,14 @@ package com.examplet.teste;
 import com.examplet.entidades.Lutador;
 
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class LutadorActivity extends ActionBarActivity {
+public class LutadorActivity extends AppCompatActivity  {
 
 	TextView txtBoxe = null;
 	TextView txtChute = null;
@@ -20,6 +21,13 @@ public class LutadorActivity extends ActionBarActivity {
 	TextView txtExplocao = null;
 	TextView txtResistencia = null;
 	TextView txtEstadofisico = null;
+	
+	TextView txtGanhadas = null;
+	TextView txtPerdidas = null;
+	TextView txtEmpatadas = null;
+	TextView txtKos = null;
+	TextView txtNome = null;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +46,14 @@ public class LutadorActivity extends ActionBarActivity {
 			txtVelocidade = (TextView) findViewById(R.id.txtVelocidade);
 			txtExplocao = (TextView) findViewById(R.id.txtExplocao);
 			txtResistencia = (TextView) findViewById(R.id.txtResistencia);
-			txtEstadofisico = (TextView) findViewById(R.id.txtEstadofisico);	
+			txtEstadofisico = (TextView) findViewById(R.id.txtEstadofisico);
+			
+			txtGanhadas = (TextView) findViewById(R.id.txtGanhadas);
+			txtPerdidas = (TextView) findViewById(R.id.txtPerdidas);
+			txtEmpatadas = (TextView) findViewById(R.id.txtEmpatadas);
+			txtKos = (TextView) findViewById(R.id.txtKos);
+			
+			txtNome = (TextView) findViewById(R.id.txtNome);
 			
 			txtBoxe.setText(lutador.getBoxe()+"");
 			txtChute.setText(lutador.getChute()+"");
@@ -49,6 +64,12 @@ public class LutadorActivity extends ActionBarActivity {
 			txtExplocao.setText(lutador.getExplocao()+"");
 			txtResistencia.setText(lutador.getResistencia()+"");
 			txtEstadofisico.setText(lutador.getEstadofisico()+"");	
+			
+			txtGanhadas.setText(lutador.getGanhadas()+"");
+			txtPerdidas.setText(lutador.getPerdidas()+"");
+			txtEmpatadas.setText(lutador.getEmpatadas()+"");
+			txtKos.setText(lutador.getKos()+"");	
+			txtNome.setText(lutador.getNome()+"");	
 		
 		}
 		catch (Exception e) {

@@ -55,15 +55,15 @@ public class MainActivity extends AppCompatActivity implements DataReturn {
         this.ctx = this.getApplicationContext();
         com.examplet.util.UserManager.getInstance(this.ctx);
         
-		Rest r = new Rest();
-		r.adicionar(1+"", "id");
-		r.setAction("getlutador");
-		r.setDataReturn(this);
-		r.execute("");
+//		Rest r = new Rest();
+//		r.adicionar(1+"", "id");
+//		r.setAction("getlutador");
+//		r.setDataReturn(this);
+//		r.execute("");
         
         
         try {
-            setContentView(R.layout.activity_lutador);
+            setContentView(R.layout.activity_treino);
         // Get ListView object from xml
 //        listView = (ListView) findViewById(R.id.list);
 //        

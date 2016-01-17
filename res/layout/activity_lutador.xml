@@ -60,7 +60,7 @@
                 android:layout_marginTop="2dp"
                 android:width="15dp" />  
                 
-            <TextView
+			 <TextView
                 android:id="@+id/txtEmpatadas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 android:width="15dp" /> 
                 
             <TextView
-                android:id="@+id/Kos"
+                android:id="@+id/txtKos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/zero"

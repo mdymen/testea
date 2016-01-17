@@ -30,6 +30,7 @@
     <string name="title_activity_inicio">Inicio</string>
     <string name="title_activity_luta">Luta</string>
     <string name="title_activity_lutador">Lutador</string>
+    <string name="treinarlutador">Treinar Lutador</string>
     <string name="reminder">reminder</string>
     <string name="boxe">boxe</string>
     <string name="joelho">joelho</string>

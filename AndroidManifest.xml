@@ -49,11 +49,11 @@
             android:label="@string/title_activity_lutador" >
         </activity>
         <activity
-            android:name=".Resultado"
+            android:name=".ResultadoActivity"
             android:label="@string/title_activity_resultado" >
         </activity>
         <activity
-            android:name=".Treino"
+            android:name=".TreinoActivity"
             android:label="@string/title_activity_treino" >
         </activity>
     </application>

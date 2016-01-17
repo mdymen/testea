@@ -6,11 +6,276 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.examplet.teste.Treino" >
+    tools:context="com.examplet.teste.LutadorActivity" >
 
-    <TextView
+    <ImageView
+        android:id="@+id/imgLutador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:contentDescription=""
+        android:maxWidth="200dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/imgLutador" >
+
+        <TableRow
+            android:id="@+id/trNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/txtNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nome"
+                android:width="100dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/trRecorde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/txtGanhadas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/zero"
+                android:width="15dp" />
+
+            <TextView
+                android:id="@+id/txtPerdidas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/zero"
+                android:width="15dp" />
+
+            <TextView
+                android:id="@+id/txtEmpatadas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/zero"
+                android:width="15dp" />
+
+            <TextView
+                android:id="@+id/txtKos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/zero"
+                android:width="15dp" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_below="@id/imgLutador"
+        android:layout_marginTop="60dp" >
+
+        <TableRow
+            android:id="@+id/dtBoxe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/boxe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/boxe"
+                android:width="100dp" />
+
+            <TextView
+                android:id="@+id/txtBoxe"
+                android:text="@string/zero"
+                android:width="10dp" />
+
+            <CheckBox android:id="@+id/cbBoxe" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/cotovelo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cotovelo"
+                android:width="100dp" />
+
+            <TextView
+                android:id="@+id/txtCotovelo"
+                android:text="@string/zero"
+                android:width="10dp" />
+
+            <CheckBox android:id="@+id/cbCotovelo" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/chute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chute"
+                android:width="100dp" />
+
+            <TextView
+                android:id="@+id/txtChute"
+                android:text="@string/zero"
+                android:width="10dp" />
+
+            <CheckBox android:id="@+id/cbChute" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/joelho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/joelho"
+                android:width="100dp" />
+
+            <TextView
+                android:id="@+id/txtJoelho"
+                android:text="@string/zero"
+                android:width="10dp" />
+
+            <CheckBox android:id="@+id/cbJoelho" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/clinch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clinch"
+                android:width="100dp" />
+
+            <TextView
+                android:id="@+id/txtClinch"
+                android:text="@string/zero"
+                android:width="10dp" />
+
+            <CheckBox android:id="@+id/cbClinch" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/velocidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/velocidade"
+                android:width="100dp" />
+
+            <TextView
+                android:id="@+id/txtVelocidade"
+                android:text="@string/zero"
+                android:width="10dp" />
+
+            <CheckBox android:id="@+id/cbVelocidade" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/explocao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/explocao"
+                android:width="100dp" />
+
+            <TextView
+                android:id="@+id/txtExplocao"
+                android:text="@string/zero"
+                android:width="10dp" />
+
+            <CheckBox android:id="@+id/cbExplocao" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/resistencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resistencia"
+                android:width="100dp" />
+
+            <TextView
+                android:id="@+id/txtResistencia"
+                android:text="@string/zero"
+                android:width="10dp" />
+
+            <CheckBox android:id="@+id/cbResistencia" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/estadofisico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estadofisico"
+                android:width="100dp" />
+
+            <TextView
+                android:id="@+id/txtEstadofisico"
+                android:text="@string/zero"
+                android:width="10dp"
+                android:onClick="cbEstadoFisico"  />
+
+            <CheckBox 
+                android:id="@+id/cbEstadoFisico"
+                android:onClick="cbEstadoFisico" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btnTreino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tableLayout1"
+        android:layout_below="@+id/tableLayout1"
+        android:layout_marginTop="16dp"
+        android:onClick="btnTreinarLutador"
+        android:text="@string/treinarlutador" />
 
 </RelativeLayout>
