@@ -1,16 +1,28 @@
 package com.examplet.teste;
 
+import com.examplet.rest.DataReturn;
+import com.examplet.rest.Rest;
+
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Luta extends ActionBarActivity {
+public class LutaActivity extends AppCompatActivity implements DataReturn  {
 
+	String retorno;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_luta);
+		
+		Rest r = new Rest();
+		r.adicionar("", "id");
+		r.setAction("getluta");
+		r.execute("");
+		
 	}
 
 	@Override
@@ -30,5 +42,16 @@ public class Luta extends ActionBarActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void dataActiviyReturn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setValor(Object valor) {
+		this.retorno = (String) valor;
 	}
 }

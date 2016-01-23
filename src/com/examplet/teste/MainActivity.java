@@ -63,7 +63,9 @@ public class MainActivity extends AppCompatActivity implements DataReturn {
         
         
         try {
-            setContentView(R.layout.activity_treino);
+        	Intent i = new Intent(ctx,InicioActivity.class);
+        	startActivity(i);
+          //  setContentView(R.layout.activity_treino);
         // Get ListView object from xml
 //        listView = (ListView) findViewById(R.id.list);
 //        

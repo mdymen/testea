@@ -8,15 +8,26 @@ import com.examplet.rest.Rest;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 public class TreinoActivity extends AppCompatActivity implements DataReturn {
 
+	CheckBox cbBoxe = null;
+	CheckBox cbCotovelo = null;
+	CheckBox cbChute = null;
+	CheckBox cbClinch = null;
+	CheckBox cbJoelho = null;
+	CheckBox cbVelocidade = null;
+	CheckBox cbExplocao = null;
 	CheckBox cbEstadoFisico = null;
+	CheckBox cbResistencia = null;
+	
 	
 	List<String> treinos = null;
 	
@@ -24,15 +35,24 @@ public class TreinoActivity extends AppCompatActivity implements DataReturn {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		Rest r = new Rest();
-		r.adicionar(1+"", "id");
-		r.setAction("getlutador");
-		r.setDataReturn(this);
-		r.execute("");
+//		Rest r = new Rest();
+//		r.adicionar(1+"", "id");
+//		r.setAction("getlutador");
+//		r.setDataReturn(this);
+//		r.execute("");
 		
 		setContentView(R.layout.activity_treino);
 		treinos = new ArrayList<String>();
+		cbBoxe = (CheckBox) findViewById(R.id.cbBoxe);
+		cbChute = (CheckBox) findViewById(R.id.cbChute);
+		cbCotovelo = (CheckBox) findViewById(R.id.cbCotovelo);
+		cbJoelho = (CheckBox) findViewById(R.id.cbJoelho);
+		cbClinch = (CheckBox) findViewById(R.id.cbClinch);
+		cbVelocidade = (CheckBox) findViewById(R.id.cbVelocidade);
+		cbExplocao = (CheckBox) findViewById(R.id.cbExplocao);
+		cbResistencia = (CheckBox) findViewById(R.id.cbResistencia);
 		cbEstadoFisico = (CheckBox) findViewById(R.id.cbEstadoFisico);
+		cbResistencia = (CheckBox) findViewById(R.id.cbResistencia);
 	}
 	
 	public int getTreinoId(String propiedad) {
@@ -42,42 +62,76 @@ public class TreinoActivity extends AppCompatActivity implements DataReturn {
 	public void btnTreinarLutador(View view) {
 		Rest r = new Rest();
 		
-//		r.adicionar(,"id");
-//		r.adicionar(,"treino1");
-//		r.adicionar(,"treino2");
-//		r.adicionar(,"treino3");
+		//r.adicionar(,"id");
+		r.adicionar("treino1","carac1");
+		r.adicionar("treino2","carac2");
+		r.adicionar("treino3","carac3");
+		r.setAction("treinar");
+    	r.setDataReturn(this);
+    	r.execute("");
 		
 	}
 	
-	public void cbEstadoFisico(View view) {
+	private void excluirTreinamento(String propiedad) {
+		if (propiedad.equals("boxe")) {
+			treinos.remove("boxe");
+		} else if (propiedad.equals("chute")){
+			treinos.remove("chute");
+		} else if (propiedad.equals("joelho")) {
+			treinos.remove("joelho");
+		} else if (propiedad.equals("clinch")) {
+			treinos.remove("clinch");
+		} else if (propiedad.equals("cotovelo")) {
+			treinos.remove("cotovelo");
+		} else if (propiedad.equals("estado fisico")) {
+			treinos.remove("estadofisico");
+		} else if (propiedad.equals("velocidade")) {
+			treinos.remove("velocidade");
+		} else if (propiedad.equals("explocao")) {
+			treinos.remove("explocao");
+		} else if (propiedad.equals("resistencia")) {
+			treinos.remove("resistencia");
+		}		
+	}
+	
+	private void incluirTreinamento(String propiedad) {
+		if (propiedad.equals("boxe")) {
+			treinos.add("boxe");
+		} else if (propiedad.equals("chute")){
+			treinos.add("chute");
+		} else if (propiedad.equals("joelho")) {
+			treinos.add("joelho");
+		} else if (propiedad.equals("clinch")) {
+			treinos.add("clinch");
+		} else if (propiedad.equals("cotovelo")) {
+			treinos.add("cotovelo");
+		} else if (propiedad.equals("estado fisico")) {
+			treinos.add("estadofisico");
+		} else if (propiedad.equals("velocidade")) {
+			treinos.add("velocidade");
+		} else if (propiedad.equals("explocao")) {
+			treinos.add("explocao");
+		} else if (propiedad.equals("resistencia")) {
+			treinos.add("resistencia");
+		}
+	}
+	
+	public void cbTreino(View view) {
 		CheckBox cb = (CheckBox)view;
-		String propiedad = cb.getText().toString();
+		String treino = cb.getText().toString();
+		boolean checked = cb.isChecked();
 		
 		if (treinos.size() < 3) {
-			if (propiedad.equals("Boxe")) {
-				treinos.add("Boxe");
-			} else if (propiedad.equals("Chute")){
-				treinos.add("Chute");
-			} else if (propiedad.equals("Joelho")) {
-				treinos.add("Joelho");
-			} else if (propiedad.equals("Clinch")) {
-				treinos.add("Clinch");
-			} else if (propiedad.equals("Cotovelo")) {
-				treinos.add("Cotovelo");
-			} else if (propiedad.equals("EstadoFisico")) {
-				treinos.add("EstadoFisico");
-			} else if (propiedad.equals("Velocidade")) {
-				treinos.add("Velocidade");
-			} else if (propiedad.equals("Explocao")) {
-				treinos.add("Explocao");
-			} else if (propiedad.equals("Resistencia")) {
-				treinos.add("Resistencia");
+			if (checked) {
+				this.incluirTreinamento(treino);
+			} else {
+				this.excluirTreinamento(treino);
 			}
 		} else {
-			
+			Context ctx = this.getApplicationContext();
+			Toast.makeText(ctx, "Mucho error", Toast.LENGTH_LONG).show();
 		}
-				
-		
+
 	}
 
 	@Override

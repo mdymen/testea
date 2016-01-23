@@ -37,11 +37,11 @@
             android:label="@string/title_activity_criar_lutador" >
         </activity>
         <activity
-            android:name=".Inicio"
+            android:name=".InicioActivity"
             android:label="@string/title_activity_inicio" >
         </activity>
         <activity
-            android:name=".Luta"
+            android:name=".LutaActivity"
             android:label="@string/title_activity_luta" >
         </activity>
         <activity

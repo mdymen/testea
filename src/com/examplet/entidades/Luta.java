@@ -5,11 +5,13 @@ import java.util.List;
 
 public class Luta {
 
+	private int id;
 	private Lutador lutador1;
 	private Lutador lutador2;
 	private Date data;
 	private boolean foi;
 	private List<String> comentarios;
+	private String resultado;
 	
 	public Lutador getLutador1() {
 		return lutador1;
@@ -43,6 +45,21 @@ public class Luta {
 	public void setComentarios(List<String> comentarios) {
 		this.comentarios = comentarios;
 	}
+	public String getResultado() {
+		return resultado;
+	}
+	public void setResultado(String resultado) {
+		this.resultado = resultado;
+	}
 	
-	
+	@Override
+	public String toString() {
+		return "lutador1";
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 }

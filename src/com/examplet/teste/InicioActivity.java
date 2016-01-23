@@ -1,5 +1,9 @@
 package com.examplet.teste;
 
+import com.examplet.entidades.Luta;
+import com.examplet.rest.DataReturn;
+import com.examplet.rest.Rest;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,16 +16,24 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class Inicio extends AppCompatActivity {
+public class InicioActivity extends AppCompatActivity implements DataReturn  {
 
-	   ListView listView; 
-	
+	ListView listView; 
+	String retorno;
+	   
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		setContentView(R.layout.activity_inicio);
+		
 		 // Get ListView object from xml
         listView = (ListView) findViewById(R.id.list);
+        
+        Luta l1 = new Luta();
+        l1.setId(1);
+        
+        Luta[] lutas = new Luta[] { l1 };
         
         // Defined Array values to show in ListView
         String[] values = new String[] { "Android List View", 
@@ -42,8 +54,8 @@ public class Inicio extends AppCompatActivity {
         // Third parameter - ID of the TextView to which the data is written
         // Forth - the Array of data
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-          android.R.layout.simple_list_item_1, android.R.id.text1, values);
+        ArrayAdapter<Luta> adapter = new ArrayAdapter<Luta>(this,
+          android.R.layout.simple_list_item_1, android.R.id.text1, lutas);
 
 
         // Assign adapter to ListView
@@ -51,7 +63,12 @@ public class Inicio extends AppCompatActivity {
         
 
 		
-		setContentView(R.layout.activity_inicio);
+
+		
+//		Rest r = new Rest();
+//		r.setAction("getlutas");
+//		r.execute("");
+
 	}
 	
 	
@@ -73,5 +90,17 @@ public class Inicio extends AppCompatActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void dataActiviyReturn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setValor(Object valor) {
+		this.retorno = (String) valor;
+		
 	}
 }

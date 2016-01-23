@@ -12,17 +12,15 @@
         android:id="@+id/imgLutador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription=""
         android:maxWidth="200dp"
+        android:contentDescription="@string/zero"
         android:src="@drawable/ic_launcher" />
 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/imgLutador" >
+        android:layout_marginTop="10dp" >
 
         <TableRow
             android:id="@+id/trNome"
@@ -101,7 +99,9 @@
                 android:text="@string/zero"
                 android:width="10dp" />
 
-            <CheckBox android:id="@+id/cbBoxe" />
+            <CheckBox android:id="@+id/cbBoxe"
+                android:text="@string/boxe"
+                android:onClick="cbTreino" />
         </TableRow>
 
         <TableRow
@@ -121,7 +121,9 @@
                 android:text="@string/zero"
                 android:width="10dp" />
 
-            <CheckBox android:id="@+id/cbCotovelo" />
+            <CheckBox android:id="@+id/cbCotovelo"
+                android:text="@string/cotovelo"
+                android:onClick="cbTreino" />
         </TableRow>
 
         <TableRow
@@ -141,7 +143,9 @@
                 android:text="@string/zero"
                 android:width="10dp" />
 
-            <CheckBox android:id="@+id/cbChute" />
+            <CheckBox android:id="@+id/cbChute"
+                android:text="@string/chute"
+                android:onClick="cbTreino" />
         </TableRow>
 
         <TableRow
@@ -161,7 +165,9 @@
                 android:text="@string/zero"
                 android:width="10dp" />
 
-            <CheckBox android:id="@+id/cbJoelho" />
+            <CheckBox android:id="@+id/cbJoelho" 
+                android:text="@string/joelho"
+                android:onClick="cbTreino"/>
         </TableRow>
 
         <TableRow
@@ -181,7 +187,9 @@
                 android:text="@string/zero"
                 android:width="10dp" />
 
-            <CheckBox android:id="@+id/cbClinch" />
+            <CheckBox android:id="@+id/cbClinch"
+                android:text="@string/clinch"
+                android:onClick="cbTreino" />
         </TableRow>
 
         <TableRow
@@ -201,7 +209,9 @@
                 android:text="@string/zero"
                 android:width="10dp" />
 
-            <CheckBox android:id="@+id/cbVelocidade" />
+            <CheckBox android:id="@+id/cbVelocidade"
+                android:text="@string/velocidade"
+                android:onClick="cbTreino" />
         </TableRow>
 
         <TableRow
@@ -221,7 +231,9 @@
                 android:text="@string/zero"
                 android:width="10dp" />
 
-            <CheckBox android:id="@+id/cbExplocao" />
+            <CheckBox android:id="@+id/cbExplocao"
+                android:text="@string/explocao"
+                android:onClick="cbTreino"  />
         </TableRow>
 
         <TableRow
@@ -241,7 +253,9 @@
                 android:text="@string/zero"
                 android:width="10dp" />
 
-            <CheckBox android:id="@+id/cbResistencia" />
+            <CheckBox android:id="@+id/cbResistencia"
+                android:text="@string/resistencia"
+                android:onClick="cbTreino" />
         </TableRow>
 
         <TableRow
@@ -259,12 +273,12 @@
             <TextView
                 android:id="@+id/txtEstadofisico"
                 android:text="@string/zero"
-                android:width="10dp"
-                android:onClick="cbEstadoFisico"  />
+                android:width="10dp"  />
 
             <CheckBox 
                 android:id="@+id/cbEstadoFisico"
-                android:onClick="cbEstadoFisico" />
+                android:text="@string/estadofisico"
+                android:onClick="cbTreino" />
         </TableRow>
     </TableLayout>
 
@@ -272,7 +286,6 @@
         android:id="@+id/btnTreino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tableLayout1"
         android:layout_below="@+id/tableLayout1"
         android:layout_marginTop="16dp"
         android:onClick="btnTreinarLutador"
