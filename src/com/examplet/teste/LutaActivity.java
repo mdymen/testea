@@ -1,10 +1,16 @@
 package com.examplet.teste;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.examplet.entidades.LutaDetalheTO;
 import com.examplet.rest.DataReturn;
 import com.examplet.rest.Rest;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,9 +24,13 @@ public class LutaActivity extends AppCompatActivity implements DataReturn  {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_luta);
 		
+		Intent intent = getIntent();
+		int luta = intent.getIntExtra("luta",0);
+		
 		Rest r = new Rest();
-		r.adicionar("", "id");
+		r.adicionar(String.valueOf(luta), "id");
 		r.setAction("getluta");
+		r.setDataReturn(this);
 		r.execute("");
 		
 	}
@@ -53,5 +63,16 @@ public class LutaActivity extends AppCompatActivity implements DataReturn  {
 	@Override
 	public void setValor(Object valor) {
 		this.retorno = (String) valor;
+		
+		JSONObject obj = null;
+		
+		try {
+			obj = new JSONObject(this.retorno);
+			LutaDetalheTO lutaDetalheTO = new LutaDetalheTO(obj);
+			int i = 0;
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

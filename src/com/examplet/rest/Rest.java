@@ -59,7 +59,7 @@ public class Rest extends AsyncTask<String, Void, String>{
 	
 	protected void onPostExecute(String result) {
 		this.retorno = result;
-		this.dataReturn.setValor(this.retorno);
+ 		this.dataReturn.setValor(this.retorno);
 		this.dataReturn.dataActiviyReturn();
 	}
 	
