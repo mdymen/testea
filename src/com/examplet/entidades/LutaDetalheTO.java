@@ -1,6 +1,7 @@
 package com.examplet.entidades;
 
 import java.util.Date;
+import java.util.HashMap;
 
 import org.json.JSONObject;
 
@@ -45,46 +46,107 @@ public class LutaDetalheTO {
 	private int lut2_velocidade;
 	private int lut2_estadofisico;
 	
+	private HashMap<String, Integer> lut1 = new HashMap<String, Integer>();
+	private HashMap<String, Integer> lut2 = new HashMap<String, Integer>();
+	
+	public HashMap<String, Integer> getLut2() {
+		return this.lut2;
+	}
+	
+	public HashMap<String, Integer> getLut1() {
+		return this.lut1;
+	}
+	
 	public LutaDetalheTO(JSONObject luta) {
 		try {
 			lut2_id = luta.getLong("lu2Luta");
+			lut2.put("chute", lut2_chute);
+			
 			lut2_nome = luta.getString("lu2Nome");
+			
 			lut2_ganhadas = luta.getInt("lu2Ganhadas");
+			lut2.put("ganhadas", lut2_ganhadas);
+			
 			lut2_perdidas = luta.getInt("lu2Perdidas");
+			lut2.put("perdidas", lut2_perdidas);
+			
 			lut2_empatadas = luta.getInt("lu2Empatadas");
+			lut2.put("empatadas", lut2_empatadas);
+			
 			lut2_kos = luta.getInt("lu2Kos");
+			lut2.put("kos", lut2_kos);
 			
 			lut2_boxe = luta.getInt("lu2Boxe");
+			lut2.put("boxe", lut2_boxe);
+			
 			lut2_joleho = luta.getInt("lu2Joelhada");
+			lut2.put("joelho", lut2_joleho);
+			
 			lut2_cotovelo = luta.getInt("lu2Cotovelo");
+			lut2.put("cotovelo", lut2_cotovelo);
+			
 			lut2_chute = luta.getInt("lu2Chute");
+			lut2.put("chute", lut2_chute);
 			
 			lut2_clinch = luta.getInt("lu2Clinch");
+			lut2.put("clinch", lut2_clinch);
+			
 			lut2_resistencia = luta.getInt("lu2Resistencia");
+			lut2.put("resistencia", lut2_resistencia);
+			
 			lut2_explocao = luta.getInt("lu2Explocao");
+			lut2.put("explocao", lut2_explocao);
+			
 			lut2_velocidade = luta.getInt("lu2Velocidade");
+			lut2.put("velocidade", lut2_velocidade);
+			
 			lut2_estadofisico = luta.getInt("lu2EstadoFisico");
+			lut2.put("estadofisico", lut2_estadofisico);
 			
 			luta_id = luta.getLong("lu1Luta");
 			data = luta.getString("DT_DATA_LUTA");
 			resultado = luta.getString("ST_RESULTADO_LUTA");
 			lut1_id = luta.getLong("lu1Luta");
 			lut1_nome = luta.getString("lu1Nome");
+			
 			lut1_ganhadas = luta.getInt("lu1Ganhadas");
+			lut1.put("ganhadas", lut1_ganhadas);
+			
 			lut1_perdidas = luta.getInt("lu1Perdidas");
+			lut1.put("perdidas", lut1_perdidas);
+			
 			lut1_empatadas = luta.getInt("lu1Empatadas");
+			lut1.put("empatadas", lut1_empatadas);
+			
 			lut1_kos = luta.getInt("lu1Kos");
+			lut1.put("kos", lut1_kos);
 			
 			lut1_boxe = luta.getInt("lu1Boxe");
+			lut1.put("boxe", lut1_boxe);
+			
 			lut1_joleho = luta.getInt("lu1Joelhada");
+			lut1.put("joelho", lut1_joleho);
+			
 			lut1_cotovelo = luta.getInt("lu1Cotovelo");
+			lut1.put("cotovelo", lut1_cotovelo);
+			
 			lut1_chute = luta.getInt("lu1Chute");
+			lut1.put("chute", lut1_chute);
 			
 			lut1_clinch = luta.getInt("lu1Clinch");
+			lut1.put("clinch", lut1_clinch);
+			
 			lut1_resistencia = luta.getInt("lu1Resistencia");
+			lut1.put("resistencia", lut1_resistencia);
+			
 			lut1_explocao = luta.getInt("lu1Explocao");
+			lut1.put("explocao", lut1_explocao);
+			
 			lut1_velocidade = luta.getInt("lu1Velocidade");
+			lut1.put("velocidade", lut1_velocidade);
+			
 			lut1_estadofisico = luta.getInt("lu1EstadoFisico");
+			lut1.put("estadofisico", lut1_estadofisico);
 		}
 		catch (Exception e) {
 			

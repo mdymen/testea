@@ -39,6 +39,28 @@ public class InicioActivity extends AppCompatActivity implements DataReturn  {
 		
 		setContentView(R.layout.activity_inicio);
 		
+//		String[] itemname ={
+//				"Safari",
+//				"Camera",
+//				"Global",
+//				"FireFox",
+//				"UC Browser",
+//				"Android Folder",
+//				"VLC Player",
+//				"Cold War"
+//			};
+		
+		
+		
+//        ArrayAdapter<LutaTO> adapter = new ArrayAdapter<LutaTO>(this,
+//          android.R.layout.simple_list_item_1, android.R.id.text1, lutas);
+//		listView = (ListView) findViewById(R.id.list);
+//		ListaInicioAdapter adapter = new ListaInicioAdapter(this, itemname);
+//        listView.setAdapter(adapter); 
+        
+     //   listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+		
 //		cls = this;
 //		
 //		ctx = getApplicationContext();
@@ -96,7 +118,7 @@ public class InicioActivity extends AppCompatActivity implements DataReturn  {
 //          });
 //        
 
-		
+//		
 		Rest r = new Rest();
 		r.setAction("getlutas");
 		r.setDataReturn(this);
@@ -159,10 +181,17 @@ public class InicioActivity extends AppCompatActivity implements DataReturn  {
 			    lutas.add(luta);
 			}
 			
-	        ArrayAdapter<LutaTO> adapter = new ArrayAdapter<LutaTO>(this,
-	          android.R.layout.simple_list_item_1, android.R.id.text1, lutas);
-	        
+		//	ListaInicioAdapter adapter = new ListaInicioAdapter(cls, lutas);
+			
+			listView = (ListView) findViewById(R.id.list);
+			ListaInicioAdapter adapter = new ListaInicioAdapter(this, lutas);
 	        listView.setAdapter(adapter); 
+			
+//	        ArrayAdapter<LutaTO> adapter = new ArrayAdapter<LutaTO>(this,
+//	          android.R.layout.simple_list_item_1, android.R.id.text1, lutas);
+//	        
+//	        listView.setAdapter(adapter); 
+	        
 	        
 	        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
